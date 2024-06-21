@@ -1,40 +1,140 @@
-<nb-card class="col-md-12 col-lg-12 col-xxxl-12">
-  <nb-card-header>
-    <h1>Continuous Integration (CI)</h1>
-  </nb-card-header>
-  <nb-card-body>
-    <p>La Continuous Integration (CI) est une méthode de développement logiciel dans laquelle les développeurs fusionnent régulièrement leurs modifications de code dans un référentiel central. Après chaque fusion, des builds et des tests automatisés sont exécutés pour détecter rapidement les bogues et améliorer la qualité du logiciel. En intégrant régulièrement, vous pouvez détecter et résoudre les erreurs plus tôt, améliorer la qualité des logiciels et réduire le temps nécessaire à la validation et à la publication de nouvelles mises à jour logicielles.
-    <p>Chaque intégration est vérifiée par un processus automatisé de build et de tests pour détecter les erreurs de manière rapide et automatique.</p>
-    <p>L'objectif de la CI est de fournir un feedback rapide sur l'état du développement du logiciel afin de permettre des corrections immédiates, améliorant ainsi la qualité du logiciel et réduisant le temps nécessaire pour valider et libérer des modifications.</p>
+<!DOCTYPE html>
+<html lang="en">
 
-    <img class="centered-image" src="./././assets/images/devops.png" alt="DevOps Image">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Continuous Integration in DevOps</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding-top: 20px;
+    }
 
-    <h5>Avantages de la CI :</h5>
-    <ul>
-      <li><strong>Détection rapide des erreurs :</strong> Les problèmes dans le code sont identifiés et corrigés plus rapidement.</li>
-      <li><strong>Moins de conflits de code :</strong> L'intégration fréquente réduit les conflits de fusion en maintenant les branches des développeurs alignées avec la branche principale.</li>
-      <li><strong>Amélioration de la qualité du logiciel : </strong>Les builds réguliers et les tests garantissent que les régressions sont capturées et traitées promptement.</li>
-      <li><strong>Automatisation du processus de build et de test :</strong> Libère les développeurs des tâches manuelles répétitives et permet un développement plus efficace.</li>
-    </ul>
+    .section-title {
+      margin-top: 30px;
+    }
 
-    <h5>Étapes de l'intégration continue</h5>
-    <ul>
-      <li><strong> Plan</strong> </li>
-      <li><strong> Code</strong> </li>
-      <li><strong> Build</strong> </li>
-      <li><strong> Test</strong> </li>
-    </ul>
-    <img class="centered-images" src="./././assets/images/etaps.png" alt="DevOps Image">
+    .dashboard table {
+      margin-top: 20px;
+    }
+  </style>
+</head>
 
-    <h5>Configuration de l'environnement (Code)</h5>
-    <p>Assurez-vous que tous les développeurs ont accès à un dépôt de code centralisé (comme GitLab, GitHub, ou Bitbucket). Utilisez un système de gestion de versions (VCS) comme Git.</p>
+<body>
+  <div class="container">
+    <h1 class="text-center">Intégration continue dans DevOps</h1>
+    <div>
+      <h2 >1-Le modèle Kolb :</h2>
+    </div>
 
-    <h5>Automatisation des builds</h5>
-    <p>Configurez un serveur CI (par exemple, GitLab CI/CD, Jenkins, CircleCI) pour surveiller les changements dans le dépôt. Définissez des scripts pour automatiser la construction de l'application.</p>
+    <!-- Why Section -->
+    <section id="why">
+      <h2 class="section-title">Why: Pourquoi adopter l'intégration continue ?</h2>
+      <p><strong>Objectif :</strong> Détecter et corriger rapidement les erreurs d'intégration.</p>
+      <p><strong>Raison principale :</strong></p>
+      <ul>
+        <li><strong>Contexte de développement collaboratif :</strong> Dans les environnements où plusieurs développeurs
+          travaillent sur le même codebase, les changements de code sont fréquents et peuvent souvent entrer en conflit.
+          L'intégration continue vise à minimiser ces conflits en intégrant les modifications de code fréquemment.</li>
+        <li><strong>Réduction du temps et des coûts de correction :</strong> Plus une erreur est détectée tôt dans le
+          cycle de développement, moins elle coûte cher à corriger. L'intégration continue permet de détecter ces
+          erreurs dès qu'elles sont introduites.</li>
+      </ul>
+      <p><strong>Bénéfices :</strong></p>
+      <ul>
+        <li><strong>Détection précoce des erreurs :</strong> En automatisant les tests à chaque commit, les erreurs sont
+          identifiées immédiatement, permettant aux développeurs de les corriger avant qu'elles ne se propagent.</li>
+        <li><strong>Amélioration de la qualité du code :</strong> Les tests automatisés incluent souvent des
+          vérifications de qualité de code, telles que les tests unitaires, les tests d'intégration et les analyses
+          statiques de code.</li>
+        <li><strong>Cycle de développement plus rapide :</strong> Une intégration continue et fluide signifie que le
+          code peut être testé, intégré et déployé rapidement, accélérant ainsi le cycle de livraison.</li>
+      </ul>
+    </section>
 
-    <h5>Exécution des tests</h5>
-    <p>Intégrez des tests unitaires, d'intégration et fonctionnels. Configurez le serveur CI pour exécuter automatiquement ces tests à chaque nouvelle intégration.</p>
+    <!-- What Section -->
+    <section id="what">
+      <h2 class="section-title">What: Qu'est-ce que l'intégration continue ?</h2>
+      <p><strong>Processus de Continuous Integration, phases clés et bonnes pratiques.</strong></p>
+      <p><strong>Définition :</strong></p>
+      <ul>
+        <li><strong>Intégration continue (CI) :</strong> L'intégration continue (CI) est une bonne pratique Agile et
+          DevOps qui consiste à intégrer systématiquement les changements de code dans la branche principale d'un dépôt
+          et à les tester le plus rapidement et le plus souvent possible. Dans l'idéal, les développeurs intégreront
+          leur code quotidiennement, voire plusieurs fois par jour. </li>
+      </ul>
+      <p><strong>Phases clés :</strong></p>
+      <ul>
+        <li><strong>Commit :</strong> Les développeurs valident (commit) leurs changements de code fréquemment dans un
+          référentiel partagé (par exemple, Git).</li>
+        <li><strong>Build :</strong> Le système CI (comme Jenkins, GitLab CI, etc.) déclenche automatiquement un build
+          pour compiler le code.</li>
+        <li><strong>Test :</strong> Des tests automatisés (unitaires, d'intégration, etc.) sont exécutés pour vérifier
+          que le build est stable et que les nouvelles modifications n'introduisent pas d'erreurs.</li>
+        <li><strong>Feedback :</strong> Les résultats des tests sont rapidement communiqués aux développeurs, permettant
+          une correction rapide des erreurs.</li>
+      </ul>
+      <p><strong>Bonnes pratiques :</strong></p>
+      <ul>
+        <li><strong>Intégrations fréquentes :</strong> Les développeurs doivent intégrer leur code au moins une fois par
+          jour pour éviter les conflits et les erreurs complexes.</li>
+        <li><strong>Tests automatisés complets :</strong> Inclure une suite complète de tests automatisés couvrant les
+          tests unitaires, les tests d'intégration, et les tests de régression.</li>
+        <li><strong>Automatisation du build :</strong> Utiliser des outils CI pour automatiser le processus de build et
+          de test afin de garantir une intégration rapide et fiable.</li>
+      </ul>
+    </section>
 
+    <!-- How Section -->
+    <section id="how">
+      <h2 class="section-title">How: Comment mettre en œuvre l'intégration continue ?</h2>
+      <p><strong>Mise en œuvre de CI avec exemples de pipelines et guides détaillés.</strong></p>
+      <p><strong>Outils :</strong> Jenkins, GitLab CI, Travis CI, CircleCI, etc.</p>
+      <p><strong>Exemple de pipeline CI avec Jenkins :</strong></p>
+      <pre>
 
-  </nb-card-body>
-</nb-card>
+            </pre>
+      <p><strong>Guide détaillé :</strong></p>
+      <ul>
+        <li><strong>Configurer les notifications par email :</strong> Pour informer les développeurs du succès ou de
+          l'échec des builds.</li>
+        <li><strong>Intégrer des outils d'analyse de code (e.g., SonarQube) :</strong> Pour vérifier la qualité du code.
+        </li>
+        <li><strong>Mettre en place des tests de sécurité automatisés :</strong> Pour garantir que le code est sécurisé.
+        </li>
+      </ul>
+    </section>
+
+    <!-- What if Section -->
+    <section id="what-if">
+      <h2 class="section-title">What if: Et si nous devions adapter l'intégration continue ?</h2>
+      <p><strong>Adaptations de CI pour différents types de projets et exigences de développement.</strong></p>
+      <ul>
+        <li><strong>Projets multi-langages :</strong> Configurer des pipelines CI spécifiques pour chaque langage
+          utilisé dans le projet. Exemple : Un pipeline pour Java et un autre pour JavaScript, chacun avec ses propres
+          étapes de build et de test.</li>
+        <li><strong>Applications monolithiques vs microservices :</strong></li>
+        <ul>
+          <li><strong>Monolithiques :</strong> Un seul pipeline CI gère l'intégration, le build et le déploiement.</li>
+          <li><strong>Microservices :</strong> Chaque microservice peut avoir son propre pipeline CI, permettant des
+            déploiements indépendants et des tests spécifiques.</li>
+        </ul>
+        <li><strong>Exigences réglementaires :</strong> Intégrer des étapes de vérification de conformité dans le
+          pipeline CI. Exemple : Ajout de tests spécifiques pour vérifier la conformité aux normes GDPR, HIPAA, etc.
+        </li>
+        <li><strong>Exigences de performance :</strong> Ajouter des tests de charge et de performance dans le pipeline.
+          Exemple : Utiliser des outils comme JMeter pour exécuter des tests de performance après les builds.</li>
+      </ul>
+    </section>
+
+    <!-- Dashboard Section -->
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
