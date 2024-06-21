@@ -25,7 +25,7 @@
   <div class="container">
     <h1 class="text-center">Intégration continue dans DevOps</h1>
     <div>
-      <h2 >1-Le modèle Kolb :</h2>
+      <h2>1-Le modèle Kolb :</h2>
     </div>
 
     <!-- Why Section -->
@@ -129,6 +129,92 @@
     </section>
 
     <!-- Dashboard Section -->
+    <h2>2-Avantages et limitations</h2>
+    <ul>
+      <li><strong>Détection rapide des erreurs :</strong> Les problèmes dans le code sont identifiés et corrigés plus
+        rapidement.
+      </li>
+      <li><strong>Moins de conflits de code :</strong> L'intégration fréquente réduit les conflits de fusion en
+        maintenant les branches des développeurs alignées avec la branche principale.
+        .</li>
+      <li><strong>Amélioration de la qualité du logiciel :</strong> Les builds réguliers et les tests garantissent que
+        les régressions sont capturées et traitées promptement.
+      </li>
+      <li><strong>Automatisation du processus de build et de test :</strong> Libère les développeurs des tâches
+        manuelles répétitives et permet un développement plus efficace.
+      </li>
+    </ul>
+    <h2>Modèle dynamique pour intégrer CI </h2>
+    <section id="ci-config">
+      <h2 class="section-title">Configure CI Pipeline</h2>
+      <div class="card">
+        <div class="card-header">
+          <h4>CI Pipeline Setup</h4>
+        </div>
+        <div class="card-body">
+          <form id="ci-form">
+            <div class="form-group">
+              <label for="pipelineName">Pipeline Name</label>
+              <input type="text" class="form-control" id="pipelineName" placeholder="Enter pipeline name">
+            </div>
+            <div class="form-group">
+              <label for="steps">Steps</label>
+              <input type="text" class="form-control" id="steps" placeholder="e.g., Checkout, Build, Test, Deploy">
+            </div>
+            <button type="button" class="btn btn-primary">Add Pipeline</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- CI Dashboard -->
+    <section id="ci-dashboard" class="dashboard mt-4">
+      <h2 class="section-title">CI Pipelines</h2>
+      <table class="table table-bordered" id="pipelineTable">
+        <thead class="thead-dark">
+          <tr>
+            <th>Pipeline Name</th>
+            <th>Steps</th>
+            <th>Status</th>
+            <th>Last Run</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Pipelines will be dynamically added here -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- CI Statistics -->
+    <section id="ci-stats" class="mt-4">
+      <h2 class="section-title">Statistics</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card text-white bg-success mb-3">
+            <div class="card-header">Successful Builds</div>
+            <div class="card-body">
+              <h5 class="card-title" id="successCount">0</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-white bg-danger mb-3">
+            <div class="card-header">Failed Builds</div>
+            <div class="card-body">
+              <h5 class="card-title" id="failureCount">0</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-white bg-info mb-3">
+            <div class="card-header">Total Builds</div>
+            <div class="card-body">
+              <h5 class="card-title" id="totalCount">0</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </div>
 
